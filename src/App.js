@@ -1,29 +1,19 @@
 import React, { useState } from 'react';
 import { Button, Form, Container, Header } from 'semantic-ui-react';
 import axios from 'axios';
-// import SemanticDatepicker from 'react-semantic-ui-datepickers'; //https://www.npmjs.com/package/react-semantic-ui-datepickers
-// import 'react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css';
-// import TimePicker from 'react-time-picker'; //https://github.com/wojtekmaj/react-time-picker
 import DateTimePicker from 'react-datetime-picker'; //https://www.npmjs.com/package/react-datetime-picker
 import './App.css';
 
 function myPrettyDateFormat(d) {
 	const pureDateStr = d.toString().split('GMT')[0];
-	// const timeStr = `${d.getUTCHours()}:${d.getMinutes()}`; alert(timeStr)
 	return `${pureDateStr}`
   }
 function App() {
 	const [currentDate,onChange]=useState(new Date());
-	// const [currentDate, setNewDate] = useState(new Date());
-    // const onChange = (event, data) => setNewDate(data.value);
-
-//	const [getTime,setTime]=useState('10:00');
 
 	const [meter1, setM1] = useState('');
 	const [meter2, setM2] = useState('');
 	const [meter3, setM3] = useState('');
-
-	const cDate=currentDate.toString().split('T')[0];
 	
 	const handleSubmit = (e) => {
 		e.preventDefault();
